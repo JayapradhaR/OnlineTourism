@@ -1,0 +1,24 @@
+﻿@model IEnumerable<OnlineTourism.Entity.PackageDetails>
+
+@{
+    ViewBag.Title = "Package";
+}
+
+<h2>Package</h2>
+<table border="1">
+    <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+    </tr>
+    @foreach (OnlineTourism.Entity.PackageDetails item in @Model)
+    {
+        <tr>
+            <td>
+                @item.PackageName
+            </td>
+            <td>
+                @item.PackagePrice
+            </td>
+        </tr>
+    }
+</table>

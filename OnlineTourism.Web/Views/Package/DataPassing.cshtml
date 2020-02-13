@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Package Details";
+}
+
+<h2>Package Details</h2>
+ <h3> Package Details-ViewData</h3>
+<table border="1">
+    <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+    </tr>
+    @foreach(OnlineTourism.Entity.PackageDetails item in (List<OnlineTourism.Entity.PackageDetails>)ViewData["packages"])
+    {
+        <tr>
+            <td>
+                @item.PackageName
+            </td>
+            <td>
+                @item.PackagePrice
+            </td>
+        </tr>
+    }
+</table>
+<h3>Package Details-ViewBag</h3>
+<table border="1">
+    <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+    </tr>
+    @foreach (OnlineTourism.Entity.PackageDetails item in ViewBag.Package)
+    {
+        <tr>
+            <td>
+                @item.PackageName
+            </td>
+            <td>
+                @item.PackagePrice
+            </td>
+        </tr>
+    }
+</table>
+
+

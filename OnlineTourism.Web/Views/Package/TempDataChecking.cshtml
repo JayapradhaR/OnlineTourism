@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "TempDataChecking";
+}
+
+<h2>TempDataChecking</h2>
+
+<h3>Package Details-TempData</h3>
+
+<table border="1">
+    <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+    </tr>
+    @foreach (OnlineTourism.Entity.PackageDetails item in (List<OnlineTourism.Entity.PackageDetails>)TempData["packages"])
+    {
+        <tr>
+            <td>
+                @item.PackageName
+            </td>
+            <td>
+                @item.PackagePrice
+            </td>
+        </tr>
+    }
+</table>
+
