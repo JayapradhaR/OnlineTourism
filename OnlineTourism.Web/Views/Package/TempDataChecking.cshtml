@@ -12,7 +12,8 @@
         <td>Package Name</td>
         <td>Package Price</td>
     </tr>
-    @foreach (OnlineTourism.Entity.PackageDetails item in (List<OnlineTourism.Entity.PackageDetails>)TempData["packages"])
+    @foreach (OnlineTourism.Entity.PackageDetails item in 
+    (List<OnlineTourism.Entity.PackageDetails>)TempData["packages"])
     {
         <tr>
             <td>

@@ -12,5 +12,9 @@ namespace OnlineTourism.Entity
             PackageName = packageName;
             PackagePrice = packagePrice;
         }
+        public PackageDetails()
+        {
+
+        }
     }
 }

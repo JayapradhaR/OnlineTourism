@@ -4,11 +4,19 @@
     ViewBag.Title = "Package";
 }
 
+
+@Html.ActionLink("Create New Package","Create")<br />
+
+@if(TempData["Message"]!=null)
+{
+    @Html.Label((string)TempData["Message"])
+}
 <h2>Package</h2>
 <table border="1">
     <tr>
         <td>Package Name</td>
         <td>Package Price</td>
+        <td>Choice</td>
     </tr>
     @foreach (OnlineTourism.Entity.PackageDetails item in @Model)
     {
@@ -18,6 +26,10 @@
             </td>
             <td>
                 @item.PackagePrice
+            </td>
+            <td>
+                @Html.ActionLink("Edit","Edit",new { id=item.PackageId})
+                @Html.ActionLink("Delete","Delete",new { id = item.PackageId })
             </td>
         </tr>
     }
