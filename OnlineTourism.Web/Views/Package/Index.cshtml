@@ -14,6 +14,7 @@
 <h2>Package</h2>
 <table border="1">
     <tr>
+        <td>PackageId</td>
         <td>Package Name</td>
         <td>Package Price</td>
         <td>Choice</td>
@@ -21,6 +22,9 @@
     @foreach (OnlineTourism.Entity.PackageDetails item in @Model)
     {
         <tr>
+            <td>
+                @item.PackageId
+            </td>
             <td>
                 @item.PackageName
             </td>

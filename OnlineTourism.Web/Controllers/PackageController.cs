@@ -40,15 +40,14 @@ namespace OnlineTourism.Web.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(PackageDetails packageDetails)
+        [ActionName("Create")]
+        public ActionResult CreatePackage()
         {
-           // if(ModelState.IsValid)
-            //{
-                package.AddPackage(packageDetails);
-                TempData["Message"] = "Package added";
-                return RedirectToAction("Index");
-            //}
-            //return View(packageDetails);
+            PackageDetails packageDetails = new PackageDetails();
+            UpdateModel(packageDetails);
+            package.AddPackage(packageDetails);
+            TempData["Message"] = "Package added";
+            return RedirectToAction("Index");
         }
         public ActionResult Edit(int id)
         {
@@ -62,15 +61,13 @@ namespace OnlineTourism.Web.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult Update(PackageDetails packageDetails)
+        public ActionResult Update()
         {
-           // if (ModelState.IsValid)
-            //{
-                package.UpdatePackage(packageDetails);
-                TempData["Message"] = "Package updated";
-                return RedirectToAction("Index");
-            //}
-            //return View("Edit",packageDetails);
+            PackageDetails packageDetails = new PackageDetails();
+            TryUpdateModel(packageDetails);
+            package.UpdatePackage(packageDetails);
+            TempData["Message"] = "Package updated";
+            return RedirectToAction("Index");
         }
     }
 }
