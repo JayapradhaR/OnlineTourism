@@ -63,8 +63,6 @@ namespace OnlineTourism.Web.Controllers
        [HttpPost]
         public ActionResult Edit([Bind(Include ="PackageId, PackageName")]PackageDetails packageDetails)
         {
-            //PackageDetails packageDetails = new PackageDetails();
-            //TryUpdateModel(packageDetails);
             package.UpdatePackage(packageDetails);
             TempData["Message"] = "Package updated";
             return RedirectToAction("Index");
