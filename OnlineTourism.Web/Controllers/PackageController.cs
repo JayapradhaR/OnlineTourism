@@ -60,11 +60,11 @@ namespace OnlineTourism.Web.Controllers
             TempData["Message"] = "Package deleted";
             return RedirectToAction("Index");
         }
-        [HttpPost]
-        public ActionResult Update()
+       [HttpPost]
+        public ActionResult Edit([Bind(Include ="PackageId, PackageName")]PackageDetails packageDetails)
         {
-            PackageDetails packageDetails = new PackageDetails();
-            TryUpdateModel(packageDetails);
+            //PackageDetails packageDetails = new PackageDetails();
+            //TryUpdateModel(packageDetails);
             package.UpdatePackage(packageDetails);
             TempData["Message"] = "Package updated";
             return RedirectToAction("Index");

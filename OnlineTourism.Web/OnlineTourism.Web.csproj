@@ -134,6 +134,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Package\Create.cshtml" />
     <Content Include="Views\Package\Edit.cshtml" />
+    <Content Include="Views\Package\TempData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
